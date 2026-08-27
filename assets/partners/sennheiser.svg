@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 220" width="100%" height="100%">
+  <!-- Transparent background, white official Sennheiser box emblem & wordmark -->
+  <g fill="#FFFFFF">
+    <!-- Outer rectangular frame stroke -->
+    <path d="M 20 20 L 220 20 L 220 150 L 20 150 Z M 32 32 L 32 138 L 208 138 L 208 32 Z"/>
+    
+    <!-- Diagonal S wave inside frame -->
+    <path d="M 32 138 C 70 138 95 100 120 70 C 145 40 170 32 208 32 L 208 44 C 175 44 153 58 130 88 C 107 118 80 138 32 138 Z"/>
+    
+    <!-- 'SENNHEISER' bottom wordmark typography -->
+    <text x="12" y="194" font-family="'Inter', 'Sora', -apple-system, sans-serif" font-weight="800" font-size="27" letter-spacing="3">SENNHEISER</text>
+  </g>
+</svg>

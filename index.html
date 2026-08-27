@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Nexoraa — Luxury Smart Home Automation in Guwahati &amp; Northeast India</title>
+  <meta name="description" content="Nexoraa designs, installs and supports luxury smart homes across Guwahati and Northeast India. Smart lighting, home cinema, security, enterprise Wi-Fi &amp; access control." />
+  <meta name="theme-color" content="#05070A" />
+  <link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/experience.css" />
+</head>
+<body class="xp">
+
+<!-- The room: a real photograph of a finished Nexoraa installation, cut into
+     layers that all came out of the same frame. A plain gradient stands in if
+     the imagery cannot load. -->
+<div id="nx-room" aria-hidden="true">
+  <div class="nx-stage" id="nx-stage">
+    <img class="rm rm-base" src="assets/hero-room-web.jpg" alt="" width="1537" height="1023" fetchpriority="high" decoding="async" />
+    <img class="rm rm-day" src="assets/room/window-day.webp" alt="" loading="lazy" decoding="async" />
+    <div class="rm rm-drape rm-drape--l"></div>
+    <div class="rm rm-drape rm-drape--r"></div>
+    <img class="rm rm-fg" src="assets/room/foreground.webp" alt="" loading="lazy" decoding="async" />
+    <div class="rm rm-dim"></div>
+    <img class="rm rm-e rm-ceiling" src="assets/room/emissive-ceiling.webp" alt="" loading="lazy" decoding="async" />
+    <img class="rm rm-e rm-media" src="assets/room/emissive-media.webp" alt="" loading="lazy" decoding="async" />
+    <img class="rm rm-e rm-lamp" src="assets/room/emissive-lamp.webp" alt="" loading="lazy" decoding="async" />
+    <img class="rm rm-e rm-accent" src="assets/room/emissive-accent.webp" alt="" loading="lazy" decoding="async" />
+    <img class="rm rm-e rm-tv" src="assets/room/emissive-tv.webp" alt="" loading="lazy" decoding="async" />
+    <div class="rm rm-hot rm-panel"></div>
+    <div class="rm rm-hot rm-lock"></div>
+  </div>
+  <div class="rm-grade"></div>
+</div>
+<div class="xp-static" aria-hidden="true"></div>
+<div class="xp-grain" aria-hidden="true"></div>
+<div class="xp-progress" aria-hidden="true"><i></i></div>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="index.html" class="logo" aria-label="Nexoraa Home">
+      <img src="assets/logo-mark.png" alt="Nexoraa Icon" class="logo-img" />
+      <img src="assets/logo-wordmark.png" alt="Nexoraa Logo" class="logo-wordmark" />
+    </a>
+
+    <ul class="nav-links" id="nav-links">
+      <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+      <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+      <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+      <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <a href="contact.html" class="btn btn-p">Book Visit</a>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle mobile navigation"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<nav class="xp-rail" aria-label="Chapters">
+  <ol>
+      <li><a href="#ch-enter" data-rail="0"><span>Enter</span> <i></i></a></li>
+      <li><a href="#ch-light" data-rail="1"><span>Lighting</span> <i></i></a></li>
+      <li><a href="#ch-day" data-rail="2"><span>Daylight</span> <i></i></a></li>
+      <li><a href="#ch-cinema" data-rail="3"><span>Cinema</span> <i></i></a></li>
+      <li><a href="#ch-security" data-rail="4"><span>Security</span> <i></i></a></li>
+      <li><a href="#ch-home" data-rail="5"><span>The Home</span> <i></i></a></li>
+  </ol>
+</nav>
+
+<div class="xp-hud" aria-hidden="true">
+  <div class="xp-hud__row"><span class="xp-dot"></span> Nexoraa OS</div>
+  <div class="xp-hud__row">Zone &nbsp;<b id="xp-zone">Living Room</b></div>
+  <div class="xp-hud__row">Status &nbsp;<b id="xp-state">Standby</b></div>
+</div>
+
+<main class="xp-scroll">
+
+  <section class="chapter " id="ch-enter" data-cam="0">
+    <div class="chapter__inner">
+      <div class="panel">
+        <span class="panel__no">Chapter 01 — Enter</span>
+        <span class="pill"><span class="dot"></span> Serving Guwahati &amp; Northeast India</span>
+      <h1>Your spaces,<br>quietly<br><em>intelligent.</em></h1>
+      <p class="lead">Nexoraa designs, installs and supports complete luxury smart homes. Lighting, cinema, security, climate and acoustics integrated into one seamless architectural experience.</p>
+      
+      <div class="hero-cta">
+        <a href="contact.html" class="btn btn-p btn-lg hero-btn-p"><span class="desktop-cta-text">Book a Home Consultation</span><span class="mobile-cta-text">Book a Consultation</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="services.html" class="btn btn-g btn-lg hero-btn-g">Explore Systems</a>
+      </div>
+        
+      </div>
+    </div>
+    <div class="xp-hint"><span></span> Scroll to enter</div>
+  </section>
+
+  <section class="chapter chapter--right" id="ch-light" data-cam="1">
+    <div class="chapter__inner">
+      <div class="panel">
+        <span class="panel__no">Chapter 02 — Lighting</span>
+        <span class="eyebrow"><span class="dot"></span> Architectural Lighting</span>
+        <h2>The house wakes,<br>one circuit at a time.</h2>
+        <p class="lead">Circadian tunable white lighting that follows natural sunlight patterns, paired with bespoke physical keypads.</p>
+        <div class="panel__systems"><span class="on">Cove</span><span class="on">Downlights</span><span class="on">Keypad</span><span class="">Shades</span><span class="">Cinema</span></div>
+      </div>
+    </div>
+    
+  </section>
+
+  <section class="chapter " id="ch-day" data-cam="2">
+    <div class="chapter__inner">
+      <div class="panel">
+        <span class="panel__no">Chapter 03 — Daylight</span>
+        <span class="eyebrow"><span class="dot"></span> Smart Home Automation</span>
+        <h2>Shades open.<br>The room changes<br>its mind.</h2>
+        <p class="lead">Centralized control of lighting, climate, shades, and audio from sleek wall keypads or customized mobile apps.</p>
+        <div class="panel__systems"><span class="on">Shades</span><span class="on">Daylight</span><span class="on">Climate</span><span class="">Downlights</span></div>
+      </div>
+    </div>
+    
+  </section>
+
+  <section class="chapter chapter--right" id="ch-cinema" data-cam="3">
+    <div class="chapter__inner">
+      <div class="panel">
+        <span class="panel__no">Chapter 04 — Cinema</span>
+        <span class="eyebrow"><span class="dot"></span> Private Home Cinema</span>
+        <h2>One press, and the<br>living room becomes<br>a cinema.</h2>
+        <p class="lead">4K laser projection, acoustic room treatment, custom reclining seating, and immersive Dolby Atmos surround sound.</p>
+        <div class="panel__systems"><span class="on">Shades</span><span class="on">Projection</span><span class="on">Atmos</span><span class="">Cove</span><span class="">Downlights</span></div>
+      </div>
+    </div>
+    
+  </section>
+
+  <section class="chapter " id="ch-security" data-cam="4">
+    <div class="chapter__inner">
+      <div class="panel">
+        <span class="panel__no">Chapter 05 — Security</span>
+        <span class="eyebrow"><span class="dot"></span> Security &amp; Access</span>
+        <h2>It knows who<br>is at the door.</h2>
+        <p class="lead">24/7 AI person detection, thermal perimeter sensors, biometric access, and instant remote video monitoring.</p>
+        <p class="lead" style="font-size:0.95rem; margin-top:14px;">Facial recognition entry, smart door locks, video intercoms, and automated sliding driveway gate integration.</p>
+        <div class="panel__systems"><span class="on">Smart lock</span><span class="on">AI detection</span><span class="on">Intercom</span><span class="on">Gates</span></div>
+      </div>
+    </div>
+    
+  </section>
+
+  <section class="chapter chapter--content" id="ch-home" data-cam="5">
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head center reveal-up">
+      <span class="eyebrow">Architectural Automation</span>
+      <h2>Tailored systems for modern luxury living</h2>
+      <p class="lead">We select best-in-class global hardware and engineer them into one unified, intuitive ecosystem.</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="card reveal-up">
+        <div>
+          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
+          <h3>Smart Home Automation</h3>
+          <p class="lead" style="font-size:0.95rem">Centralized control of lighting, climate, shades, and audio from sleek wall keypads or customized mobile apps.</p>
+        </div>
+        <a href="services.html#home-automation" class="card-link">Explore Whole-Home <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+
+      <div class="card reveal-up">
+        <div>
+          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+          <h3>Private Home Cinema</h3>
+          <p class="lead" style="font-size:0.95rem">4K laser projection, acoustic room treatment, custom reclining seating, and immersive Dolby Atmos surround sound.</p>
+        </div>
+        <a href="services.html#audio-entertainment" class="card-link">Explore Cinema <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+
+      <div class="card reveal-up">
+        <div>
+          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3>Security &amp; AI Surveillance</h3>
+          <p class="lead" style="font-size:0.95rem">24/7 AI person detection, thermal perimeter sensors, biometric access, and instant remote video monitoring.</p>
+        </div>
+        <a href="services.html#access-control" class="card-link">Explore Security <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+
+      <div class="card reveal-up">
+        <div>
+          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0114.08 0M1.42 9a16 16 0 0121.16 0M8.53 16.11a6 6 0 016.95 0M12 20h.01"/></svg></div>
+          <h3>Networking &amp; Wi-Fi 7</h3>
+          <p class="lead" style="font-size:0.95rem">Enterprise-grade gigabit mesh networking with zero dead zones, rack installations, and cyber-security protection.</p>
+        </div>
+        <a href="services.html#networking-it" class="card-link">Explore Networking <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+
+      <div class="card reveal-up">
+        <div>
+          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></div>
+          <h3>Architectural Lighting</h3>
+          <p class="lead" style="font-size:0.95rem">Circadian tunable white lighting that follows natural sunlight patterns, paired with bespoke physical keypads.</p>
+        </div>
+        <a href="services.html#architectural-lighting" class="card-link">Explore Lighting <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+
+      <div class="card reveal-up">
+        <div>
+          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+          <h3>Access Control &amp; Gates</h3>
+          <p class="lead" style="font-size:0.95rem">Facial recognition entry, smart door locks, video intercoms, and automated sliding driveway gate integration.</p>
+        </div>
+        <a href="services.html#access-control" class="card-link">Explore Access <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background: var(--bg-surface);">
+  <div class="wrap">
+    <div class="sec-head reveal-up">
+      <span class="eyebrow">The Nexoraa Difference</span>
+      <h2>Brand-Neutral Engineering.<br>End-to-End Ownership.</h2>
+      <p class="lead">We are a dedicated service &amp; engineering firm. We are not tied to any single manufacturer, allowing us to specify what truly works best for your home architecture, wiring, and budget.</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card reveal-up">
+        <h3>Brand Neutrality</h3>
+        <p class="lead" style="font-size:0.95rem">We combine global names like Moorgen, Schneider, and Bang &amp; Olufsen with robust specialized hardware to engineer custom solutions.</p>
+      </div>
+
+      <div class="card reveal-up">
+        <h3>Local Guwahati Team</h3>
+        <p class="lead" style="font-size:0.95rem">Our engineers and technicians are locally based in Guwahati, ensuring rapid response times and direct onsite support.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="partners-sec">
+  <div class="wrap">
+    <div class="sec-head center reveal-up" style="margin-bottom: 64px;">
+      <span class="eyebrow"><span class="dot"></span> Technology Ecosystem</span>
+      <h2>Our Trusted Partners</h2>
+      <p class="lead">We specify and integrate carefully selected global brands to create reliable, unified smart environments.</p>
+    </div>
+
+    <div class="ecosystem-editorial-grid">
+      <!-- Row 1 Left: Home Automation -->
+      <div class="ecosystem-cat-card reveal-up" style="transition-delay: 0.05s;">
+        <div class="ecosystem-cat-hdr">
+          <span class="ecosystem-cat-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg>
+          </span>
+          <h3 class="ecosystem-cat-title">Home Automation</h3>
+        </div>
+        <div class="ecosystem-brand-grid cols-3">
+          <a href="assets/catalogues/moorgen-catalogue.pdf" target="_blank" rel="noopener noreferrer" class="partner-logo-card" aria-label="View Moorgen Catalogue">
+            <img src="assets/partners/moorgen.svg" alt="Moorgen" class="partner-logo-img" />
+            <span class="catalogue-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> View Catalogue</span>
+          </a>
+          <a href="assets/catalogues/ltech-catalogue.pdf" target="_blank" rel="noopener noreferrer" class="partner-logo-card" aria-label="View LTECH Catalogue">
+            <img src="assets/partners/ltech.svg" alt="LTECH" class="partner-logo-img" />
+            <span class="catalogue-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> View Catalogue</span>
+          </a>
+          <a href="assets/catalogues/schneider-electric-catalogue.pdf" target="_blank" rel="noopener noreferrer" class="partner-logo-card" aria-label="View Schneider Electric Catalogue">
+            <img src="assets/partners/schneider-electric.svg" alt="Schneider Electric" class="partner-logo-img" />
+            <span class="catalogue-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> View Catalogue</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Row 1 Right: Smart Locks & Access Control -->
+      <div class="ecosystem-cat-card reveal-up" style="transition-delay: 0.1s;">
+        <div class="ecosystem-cat-hdr">
+          <span class="ecosystem-cat-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          </span>
+          <h3 class="ecosystem-cat-title">Smart Locks &amp; Access Control</h3>
+        </div>
+        <div class="ecosystem-brand-grid cols-2">
+          <a href="assets/catalogues/yale-catalogue.pdf" target="_blank" rel="noopener noreferrer" class="partner-logo-card" aria-label="View Yale Catalogue">
+            <img src="assets/partners/yale.svg" alt="Yale" class="partner-logo-img" />
+            <span class="catalogue-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> View Catalogue</span>
+          </a>
+          <a href="assets/catalogues/leccy-genesis-catalogue.pdf" target="_blank" rel="noopener noreferrer" class="partner-logo-card" aria-label="View Leccy &amp; Genesis Catalogue">
+            <img src="assets/partners/leccy-genesis.svg" alt="Leccy &amp; Genesis" class="partner-logo-img" />
+            <span class="catalogue-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> View Catalogue</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Row 2 Left: Architectural & Premium Lighting -->
+      <div class="ecosystem-cat-card reveal-up" style="transition-delay: 0.15s;">
+        <div class="ecosystem-cat-hdr">
+          <span class="ecosystem-cat-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42"/></svg>
+          </span>
+          <h3 class="ecosystem-cat-title">Architectural &amp; Premium Lighting</h3>
+        </div>
+        <div class="ecosystem-brand-grid cols-4">
+          <a href="assets/catalogues/flos-catalogue.pdf" target="_blank" rel="noopener noreferrer" class="partner-logo-card" aria-label="View FLOS Catalogue">
+            <img src="assets/partners/flos.svg" alt="FLOS" class="partner-logo-img" />
+            <span class="catalogue-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> View Catalogue</span>
+          </a>
+          <a href="assets/catalogues/delta-light-catalogue.pdf" target="_blank" rel="noopener noreferrer" class="partner-logo-card" aria-label="View Delta Light Catalogue">
+            <img src="assets/partners/deltalight.svg" alt="Delta Light" class="partner-logo-img" />
+            <span class="catalogue-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> View Catalogue</span>
+          </a>
+          <a href="assets/catalogues/prisha-illumination-catalogue.pdf" target="_blank" rel="noopener noreferrer" class="partner-logo-card" aria-label="View Prisha Illumination Catalogue">
+            <img src="assets/partners/prisha-illumination.svg" alt="Prisha Illumination" class="partner-logo-img" />
+            <span class="catalogue-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> View Catalogue</span>
+          </a>
+          <a href="assets/catalogues/lumiverse-catalogue.pdf" target="_blank" rel="noopener noreferrer" class="partner-logo-card" aria-label="View Lumiverse Catalogue">
+            <img src="assets/partners/lumiverse.svg" alt="Lumiverse" class="partner-logo-img" />
+            <span class="catalogue-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> View Catalogue</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Row 2 Right: Audio & Home Entertainment -->
+      <div class="ecosystem-cat-card reveal-up" style="transition-delay: 0.2s;">
+        <div class="ecosystem-cat-hdr">
+          <span class="ecosystem-cat-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13M9 9l12-2"/></svg>
+          </span>
+          <h3 class="ecosystem-cat-title">Audio &amp; Home Entertainment</h3>
+        </div>
+        <div class="ecosystem-brand-grid cols-4">
+          <a href="assets/catalogues/bang-olufsen-catalogue.pdf" target="_blank" rel="noopener noreferrer" class="partner-logo-card" aria-label="View Bang &amp; Olufsen Catalogue">
+            <img src="assets/partners/bang-olufsen.svg" alt="Bang &amp; Olufsen" class="partner-logo-img" />
+            <span class="catalogue-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> View Catalogue</span>
+          </a>
+          <a href="assets/catalogues/sonos-catalogue.pdf" target="_blank" rel="noopener noreferrer" class="partner-logo-card" aria-label="View Sonos Catalogue">
+            <img src="assets/partners/sonos.svg" alt="Sonos" class="partner-logo-img" />
+            <span class="catalogue-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> View Catalogue</span>
+          </a>
+          <a href="assets/catalogues/marshall-catalogue.pdf" target="_blank" rel="noopener noreferrer" class="partner-logo-card" aria-label="View Marshall Catalogue">
+            <img src="assets/partners/marshall.svg" alt="Marshall" class="partner-logo-img" />
+            <span class="catalogue-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> View Catalogue</span>
+          </a>
+          <a href="assets/catalogues/sennheiser-catalogue.pdf" target="_blank" rel="noopener noreferrer" class="partner-logo-card" aria-label="View Sennheiser Catalogue">
+            <img src="assets/partners/sennheiser.svg" alt="Sennheiser" class="partner-logo-img" />
+            <span class="catalogue-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> View Catalogue</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Row 3 Left: Networking & IT Infrastructure -->
+      <div class="ecosystem-cat-card reveal-up" style="transition-delay: 0.25s;">
+        <div class="ecosystem-cat-hdr">
+          <span class="ecosystem-cat-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0114.08 0M1.42 9a16 16 0 0121.16 0"/></svg>
+          </span>
+          <h3 class="ecosystem-cat-title">Networking &amp; IT Infrastructure</h3>
+        </div>
+        <div class="ecosystem-brand-grid cols-3">
+          <a href="assets/catalogues/tp-link-catalogue.pdf" target="_blank" rel="noopener noreferrer" class="partner-logo-card" aria-label="View TP-Link Catalogue">
+            <img src="assets/partners/tp-link.svg" alt="TP-Link" class="partner-logo-img" />
+            <span class="catalogue-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> View Catalogue</span>
+          </a>
+          <a href="assets/catalogues/d-link-catalogue.pdf" target="_blank" rel="noopener noreferrer" class="partner-logo-card" aria-label="View D-Link Catalogue">
+            <img src="assets/partners/d-link.svg" alt="D-Link" class="partner-logo-img" />
+            <span class="catalogue-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> View Catalogue</span>
+          </a>
+          <a href="assets/catalogues/grandstream-catalogue.pdf" target="_blank" rel="noopener noreferrer" class="partner-logo-card" aria-label="View Grandstream Catalogue">
+            <img src="assets/partners/grandstream.svg" alt="Grandstream" class="partner-logo-img" />
+            <span class="catalogue-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> View Catalogue</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Row 3 Right: Professional Communications & Display Solutions -->
+      <div class="ecosystem-cat-card reveal-up" style="transition-delay: 0.3s;">
+        <div class="ecosystem-cat-hdr">
+          <span class="ecosystem-cat-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </span>
+          <h3 class="ecosystem-cat-title">Professional Communications &amp; Display Solutions</h3>
+        </div>
+        <div class="ecosystem-brand-grid cols-4">
+          <a href="assets/catalogues/yealink-catalogue.pdf" target="_blank" rel="noopener noreferrer" class="partner-logo-card" aria-label="View Yealink Catalogue">
+            <img src="assets/partners/yealink.svg" alt="Yealink" class="partner-logo-img" />
+            <span class="catalogue-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> View Catalogue</span>
+          </a>
+          <a href="assets/catalogues/logitech-catalogue.pdf" target="_blank" rel="noopener noreferrer" class="partner-logo-card" aria-label="View Logitech Catalogue">
+            <img src="assets/partners/logitech.svg" alt="Logitech" class="partner-logo-img" />
+            <span class="catalogue-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> View Catalogue</span>
+          </a>
+          <a href="assets/catalogues/viewsonic-catalogue.pdf" target="_blank" rel="noopener noreferrer" class="partner-logo-card" aria-label="View ViewSonic Catalogue">
+            <img src="assets/partners/viewsonic.svg" alt="ViewSonic" class="partner-logo-img" />
+            <span class="catalogue-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> View Catalogue</span>
+          </a>
+          <a href="assets/catalogues/promark-catalogue.pdf" target="_blank" rel="noopener noreferrer" class="partner-logo-card" aria-label="View Promark Catalogue">
+            <img src="assets/partners/promark.svg" alt="Promark" class="partner-logo-img" />
+            <span class="catalogue-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> View Catalogue</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="card reveal-up" style="background: linear-gradient(135deg, rgba(0,224,255,0.08) 0%, rgba(11,14,20,0.9) 100%); text-align: center; padding: 64px 32px;">
+      <span class="eyebrow">Ready to upgrade your home?</span>
+      <h2>Let's build something extraordinary together.</h2>
+      <p class="lead" style="max-width: 600px; margin: 0 auto 32px;">Schedule a free site visit with our senior smart home automation consultant in Guwahati or anywhere in Northeast India.</p>
+      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="contact.html" class="btn btn-p btn-lg">Schedule Site Visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="tel:8133942204" class="btn btn-g btn-lg">Call +91 81339 42204</a>
+      </div>
+    </div>
+  </div>
+</section>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <img src="assets/logo-mark.png" alt="Nexoraa Icon" class="logo-img" />
+          <img src="assets/logo-wordmark.png" alt="Nexoraa Logo" class="logo-wordmark" />
+        </a>
+        <p>Nexoraa designs, installs and supports complete luxury smart home environments across Guwahati and Northeast India.</p>
+      </div>
+
+      <div>
+        <div class="footer-title">Navigation</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-title">Services</div>
+        <ul class="footer-links">
+          <li><a href="services.html#home-automation">Home Automation</a></li>
+          <li><a href="services.html#architectural-lighting">Architectural Lighting</a></li>
+          <li><a href="services.html#audio-entertainment">Audio &amp; Cinema</a></li>
+          <li><a href="services.html#access-control">Smart Locks &amp; Access</a></li>
+          <li><a href="services.html#networking-it">Networking &amp; IT</a></li>
+          <li><a href="services.html#unified-communications">Unified Communications</a></li>
+          <li><a href="services.html#professional-av">Professional AV</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-title">Contact Us</div>
+        <ul class="footer-links">
+          <li><a href="tel:8133942204">+91 81339 42204</a></li>
+          <li><a href="mailto:chirag@nexorahomesolution.com">chirag@nexorahomesolution.com</a></li>
+          <li>Guwahati, Assam 781001</li>
+          <li>Mon – Sat: 9:00 AM – 7:00 PM</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="yr">2026</span> Nexoraa Home Solutions. All rights reserved.</span>
+      <span>Guwahati &amp; Northeast India</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/experience.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Subtle gradients for metallic premium feel -->
+    <linearGradient id="white-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
+    </linearGradient>
+
+    <linearGradient id="cyan-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F0FF"/>
+      <stop offset="100%" stop-color="#00A8E8"/>
+    </linearGradient>
+
+    <!-- Subtle edge glow -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#00E0FF" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <g transform="translate(0, 0)">
+    <!-- Main Top-Left Diagonal Bar -->
+    <polygon points="90,115 148,115 275,242 242,275 90,123" fill="url(#white-grad)" />
+    <!-- Bevel highlight for top diagonal -->
+    <polygon points="90,115 148,115 142,123 90,123" fill="#FFFFFF" />
+
+    <!-- Left Vertical Pillar -->
+    <polygon points="90,180 148,238 148,410 90,410" fill="url(#white-grad)" />
+    <!-- Bevel edge on left pillar cut -->
+    <polygon points="90,180 148,238 140,238 90,188" fill="#CBD5E1" />
+
+    <!-- Cyan Diagonal Bar (Bottom-Right) -->
+    <polygon points="258,258 290,226 410,346 410,390 378,390" fill="url(#cyan-grad)" filter="url(#glow)" />
+    <!-- Cyan top bevel accent -->
+    <polygon points="258,258 290,226 298,234 266,266" fill="#7FF0FF" />
+
+    <!-- Right Vertical Pillar -->
+    <polygon points="352,115 410,115 410,345 352,287" fill="url(#white-grad)" />
+    <!-- Bevel edge on right pillar cut -->
+    <polygon points="352,287 410,345 410,335 358,283" fill="#CBD5E1" />
+  </g>
+</svg>

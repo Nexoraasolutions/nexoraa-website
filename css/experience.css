@@ -1,0 +1,426 @@
+/* ============================================================
+   NEXORAA — Immersive experience layer
+   ------------------------------------------------------------
+   Loaded AFTER css/style.css and adds only spatial layout for the
+   3D experience. Every colour below resolves to an existing brand
+   token — --bg, --bg-surface, --bg-glass, --cyan, --text-* — or to
+   a different opacity of one. No new hue is introduced anywhere.
+
+   The page is a complete, readable site with this stylesheet alone.
+   The WebGL layer is an enhancement painted behind it.
+   ============================================================ */
+
+/* --- the room ------------------------------------------------------------
+   A real photograph of a finished Nexoraa installation, cut into layers that
+   are all in the same perspective because they all came out of the same frame.
+   Placements below are the exact regions build-room-layers.mjs extracted, as
+   percentages of the source image, so a layer lands back precisely where it
+   was taken from. Change one and it must be changed in the generator too.
+   ------------------------------------------------------------------------ */
+#nx-room {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  /* The stage resizes as the crop changes. Containment promises the browser
+     that nothing inside can affect the geometry of anything outside, so that
+     work can never turn into a document-wide reflow while scrolling. */
+  contain: layout paint;
+  /* the site's own ground until the photograph is ready — no white flash,
+     and no loading screen */
+  background: var(--bg);
+  opacity: 0;
+  transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+#nx-room.is-live { opacity: 1; }
+
+.nx-stage {
+  position: absolute;
+  top: 0; left: 0;
+  transform-origin: 0 0;
+  will-change: transform;
+}
+
+.rm { position: absolute; display: block; }
+
+/* the photograph itself */
+.rm-base { left: 0; top: 0; width: 100%; height: 100%; }
+
+/* the window, turned to daylight — same glazing, same perspective */
+.rm-day { left: 43.7%; top: 26.8%; width: 18.8%; height: 28.4%; opacity: 0; }
+
+/* real fabric off the right-hand drape, tiled and run on its track */
+.rm-drape {
+  top: 21.5%;
+  height: 40.5%;
+  background-repeat: repeat;
+  background-position: center top;
+  will-change: width;
+}
+/* Feathered on every edge. A tiled panel with a hard rectangular border is
+   the one thing that makes fabric read as pasted on; the leading edge matters
+   most, because that is the edge the eye follows as the shades travel. */
+.rm-drape--l {
+  left: 39.2%;
+  background-image: url('../assets/room/drape.webp');
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 13%, #000 87%, transparent 100%),
+                      linear-gradient(to right, #000 52%, transparent 100%);
+  -webkit-mask-composite: source-in;
+          mask-image: linear-gradient(to bottom, transparent 0, #000 13%, #000 87%, transparent 100%),
+                      linear-gradient(to right, #000 52%, transparent 100%);
+          mask-composite: intersect;
+}
+.rm-drape--r {
+  right: 33.2%;
+  background-image: url('../assets/room/drape-mirror.webp');
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 13%, #000 87%, transparent 100%),
+                      linear-gradient(to left, #000 52%, transparent 100%);
+  -webkit-mask-composite: source-in;
+          mask-image: linear-gradient(to bottom, transparent 0, #000 13%, #000 87%, transparent 100%),
+                      linear-gradient(to left, #000 52%, transparent 100%);
+          mask-composite: intersect;
+}
+
+/* the sofa back and table plant, cut along their own silhouette so the
+   shades can draw the full height of the glass and still pass behind them */
+.rm-fg { left: 36.0%; top: 47.0%; width: 34.0%; height: 19.0%; }
+
+/* "everything off": the brand ground laid over the room, which the emissive
+   layers then screen back through one circuit at a time */
+.rm-dim { left: 0; top: 0; width: 100%; height: 100%; background: var(--bg); }
+
+/* each of these is the real light of one group of fixtures */
+.rm-e { left: 0; top: 0; width: 100%; height: 100%; mix-blend-mode: screen; opacity: 0; }
+
+/* the television, lit — a circuit like any other, so it has no rectangle edge */
+.rm-tv { left: 0; top: 0; width: 100%; height: 100%; opacity: 0; mix-blend-mode: screen; }
+
+/* cursor affordances over the real devices — brand cyan, nothing invented */
+.rm-hot { mix-blend-mode: screen; opacity: 0; }
+.rm-panel {
+  left: 78.6%; top: 29.0%; width: 7.2%; height: 8.0%;
+  background: radial-gradient(closest-side, rgba(0, 224, 255, 0.50), transparent 78%);
+}
+.rm-lock {
+  left: 89.0%; top: 39.5%; width: 4.4%; height: 12.0%;
+  background: radial-gradient(closest-side, rgba(0, 224, 255, 0.55), transparent 78%);
+}
+
+/* seats the photograph on the brand ground without recolouring it */
+.rm-grade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(135% 115% at 50% 45%, rgba(5, 7, 10, 0) 46%, rgba(5, 7, 10, 0.34) 100%);
+}
+
+/* Fallback ground when the imagery cannot load: the existing gradient system,
+   so the page still reads as Nexoraa rather than as a blank slab. */
+.xp-fallback #nx-room { display: none; }
+.xp-fallback .xp-static {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(110vmax 85vmax at 34% 23%, rgba(0, 224, 255, 0.10) 0%, rgba(0, 224, 255, 0.03) 28%, transparent 64%),
+    radial-gradient(100vmax 80vmax at 50% 0%, var(--bg-surface) 0%, var(--bg) 76%);
+}
+.xp-static { display: none; }
+.xp-fallback .xp-static { display: block; }
+
+/* A fine grain over the whole stage keeps large dark gradients from banding. */
+.xp-grain {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.18;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.34'/%3E%3C/svg%3E");
+}
+
+/* --- scroll body -------------------------------------------------------- */
+.xp main,
+.xp-scroll { position: relative; z-index: 2; }
+.xp header#hdr { z-index: 1000; }
+.xp footer { position: relative; z-index: 2; background: rgba(5, 7, 10, 0.82); backdrop-filter: blur(18px); }
+
+/* --- a cinematic chapter ------------------------------------------------ */
+.chapter {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding: 120px 0 96px;
+}
+.chapter__inner {
+  width: min(1240px, 100% - 48px);
+  margin-inline: auto;
+  display: flex;
+}
+.chapter--right .chapter__inner { justify-content: flex-end; }
+.chapter--centre .chapter__inner { justify-content: center; text-align: center; }
+
+/* The panel is glass so the room stays legible behind it. Its background is
+   --bg-glass, an existing token, at a slightly deeper opacity for contrast. */
+.panel {
+  max-width: 540px;
+  padding: 40px;
+  border: 1px solid var(--border-bright);
+  border-radius: var(--radius-lg);
+  background: rgba(11, 14, 20, 0.72);
+  backdrop-filter: blur(22px) saturate(1.05);
+  -webkit-backdrop-filter: blur(22px) saturate(1.05);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.5), 0 0 60px rgba(0, 224, 255, 0.05);
+  /* Chapters reveal as the camera settles on them. */
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.chapter.is-active .panel { opacity: 1; transform: none; }
+.chapter--centre .panel { max-width: 720px; }
+
+.panel .eyebrow { margin-bottom: 18px; }
+.panel h1 { margin-bottom: 22px; }
+.panel h2 { margin-bottom: 18px; }
+.panel .lead { margin-bottom: 0; }
+.panel .lead + .hero-cta,
+.panel .lead + .panel__cta { margin-top: 30px; }
+
+/* The chapter index, set like a drawing reference. */
+.panel__no {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 0.72rem;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 20px;
+  opacity: 0.85;
+}
+
+/* A small readout that names what the house is doing in this chapter. */
+.panel__systems {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+}
+.panel__systems span {
+  font-family: var(--font-body);
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 7px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.03);
+}
+.panel__systems span.on {
+  color: var(--cyan);
+  border-color: rgba(0, 224, 255, 0.4);
+  background: rgba(0, 224, 255, 0.08);
+}
+
+/* --- chapter rail (navigating the house) -------------------------------- */
+.xp-rail {
+  position: fixed;
+  right: 26px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 900;
+  pointer-events: auto;
+}
+.xp-rail ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.xp-rail a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 8px 4px;
+  text-decoration: none;
+  color: var(--text-dim);
+  font-family: var(--font-body);
+  font-size: 0.64rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.xp-rail a i {
+  font-style: normal;
+  width: 26px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.55;
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s;
+}
+.xp-rail a:hover { color: var(--text-muted); }
+.xp-rail a.is-on { color: var(--cyan); }
+.xp-rail a.is-on i { width: 44px; opacity: 1; box-shadow: 0 0 10px var(--cyan-glow); }
+.xp-rail a:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; border-radius: 4px; }
+
+/* --- system readout, top-left, reads like the house's own console ------- */
+.xp-hud {
+  position: fixed;
+  left: 26px;
+  bottom: 26px;
+  z-index: 900;
+  display: grid;
+  gap: 7px;
+  pointer-events: none;
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.xp-hud b { color: var(--cyan); font-weight: 500; }
+.xp-hud .xp-hud__row { display: flex; align-items: center; gap: 9px; }
+.xp-hud .xp-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--cyan); box-shadow: 0 0 9px var(--cyan-glow);
+  animation: xpPulse 2.8s ease-in-out infinite;
+}
+@keyframes xpPulse { 0%, 100% { opacity: 0.35; } 50% { opacity: 1; } }
+
+/* a thin scroll progress line down the left edge */
+.xp-progress {
+  position: fixed;
+  left: 0; top: 0; bottom: 0;
+  width: 2px;
+  z-index: 900;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.04);
+}
+.xp-progress i {
+  position: absolute;
+  left: 0; top: 0; width: 100%;
+  height: 0%;
+  background: linear-gradient(180deg, var(--cyan-deep), var(--cyan));
+  box-shadow: 0 0 12px var(--cyan-glow);
+}
+
+/* --- the content chapter: real sections, over the 3D -------------------- */
+/* A scrim keeps long-form copy at full contrast without touching any colour:
+   it is the existing --bg at a partial opacity, nothing more. */
+.chapter--content {
+  display: block;
+  min-height: 0;
+  padding: 0;
+  background: linear-gradient(180deg,
+    rgba(5, 7, 10, 0) 0%,
+    rgba(5, 7, 10, 0.80) 9%,
+    rgba(5, 7, 10, 0.88) 50%,
+    rgba(5, 7, 10, 0.94) 100%);
+}
+.chapter--content .sec,
+.chapter--content .partners-sec { position: relative; z-index: 1; }
+/* The stacked sections carry their own backgrounds in style.css; let the
+   scrim show through so the room remains faintly visible behind them. */
+.chapter--content .sec[style*="bg-surface"] { background: rgba(11, 14, 20, 0.72) !important; }
+
+/* --- scroll hint -------------------------------------------------------- */
+.xp-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 38px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  transition: opacity 0.6s ease;
+}
+.xp-hint span { width: 1px; height: 30px; background: linear-gradient(180deg, var(--cyan), transparent); animation: xpDrop 2.6s ease-in-out infinite; }
+@keyframes xpDrop { 0% { opacity: 0; transform: scaleY(0.3); transform-origin: top; } 45% { opacity: 1; transform: scaleY(1); transform-origin: top; } 100% { opacity: 0; transform: scaleY(1); transform-origin: bottom; } }
+.xp-scrolled .xp-hint { opacity: 0; }
+
+/* --- responsive --------------------------------------------------------- */
+@media (max-width: 1100px) {
+  .xp-rail { right: 14px; }
+  .xp-rail a { font-size: 0; gap: 0; }     /* dashes only, no labels */
+  .xp-rail a i { width: 18px; }
+  .xp-rail a.is-on i { width: 30px; }
+}
+
+@media (max-width: 860px) {
+  .chapter { min-height: 92vh; padding: 100px 0 80px; align-items: flex-end; }
+  .chapter__inner { width: calc(100% - 32px); }
+  .chapter--right .chapter__inner,
+  .chapter--centre .chapter__inner { justify-content: flex-start; text-align: left; }
+  .panel { max-width: none; width: 100%; padding: 28px 24px; border-radius: var(--radius-md); }
+  .xp-hud { left: 16px; bottom: 74px; font-size: 0.56rem; }
+  .xp-hint { display: none; }
+  .chapter--content { background: linear-gradient(180deg, rgba(5,7,10,0) 0%, rgba(5,7,10,0.90) 7%, rgba(5,7,10,0.95) 100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel { opacity: 1; transform: none; transition: none; }
+  .xp-hint span, .xp-hud .xp-dot { animation: none; }
+  #xp-canvas { transition: none; }
+}
+
+/* --- phones ------------------------------------------------------------- */
+@media (max-width: 760px) {
+  /* The chapter rail sits on the right edge, which on a touch screen is where
+     the thumb scrolls. The chapters are reachable by scrolling anyway. */
+  .xp-rail { display: none; }
+
+  .xp-hud { left: 14px; bottom: 16px; font-size: 0.52rem; gap: 5px; }
+  .xp-progress { width: 2px; }
+
+  .chapter { min-height: 88vh; min-height: 88svh; padding: 92px 0 64px; }
+  .panel { padding: 24px 20px; }
+  .panel__no { font-size: 0.62rem; letter-spacing: 0.26em; margin-bottom: 14px; }
+  .panel__systems { gap: 6px; margin-top: 20px; padding-top: 18px; }
+  .panel__systems span { font-size: 0.6rem; padding: 6px 10px; }
+}
+
+/* A backdrop filter re-blurs whenever what is behind it moves, which on a phone
+   is the most expensive thing on the page by some margin. Softening the radius
+   on touch devices costs almost nothing visually and buys real frame budget. */
+@media (pointer: coarse), (hover: none) {
+  .panel {
+    backdrop-filter: blur(10px) saturate(1.05);
+    -webkit-backdrop-filter: blur(10px) saturate(1.05);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+  }
+  .xp footer { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+  /* the grain is a full-screen blended layer; it earns less on a small screen */
+  .xp-grain { opacity: 0.12; }
+}
+
+/* Very small phones: keep the copy comfortable rather than cramped. */
+@media (max-width: 400px) {
+  .panel { padding: 20px 16px; border-radius: var(--radius-sm); }
+  .chapter__inner { width: calc(100% - 24px); }
+  .xp-hud { display: none; }
+}
+
+/* --- pages other than the home experience --------------------------------
+   Services, About, Contact and the service detail pages keep the same room
+   behind them, held still: with no [data-cam] markers on the page the engine
+   holds the opening framing instead of running the scroll journey.
+
+   Their content sits on a darkened ground so body copy stays legible over a
+   photograph. No new colour is introduced — it is --bg at partial opacity,
+   the same treatment the home page's closing chapter already uses. */
+.xp-page__body {
+  background: linear-gradient(180deg,
+    rgba(5, 7, 10, 0.80) 0%,
+    rgba(5, 7, 10, 0.88) 40%,
+    rgba(5, 7, 10, 0.94) 100%);
+}
+.xp-page .sec[style*="bg-surface"] { background: rgba(11, 14, 20, 0.72) !important; }

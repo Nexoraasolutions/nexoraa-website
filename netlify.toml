@@ -1,0 +1,40 @@
+# Netlify configuration.
+#
+# This is a plain static site — no build step, no dependencies. Netlify just
+# serves the folder as it is, so `publish = "."` and an empty build command is
+# the whole story.
+
+[build]
+  publish = "."
+  command = ""
+
+# Netlify serves /services for /services.html on its own, so the internal
+# .html links keep working either way. Nothing here needs redirects.
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+# Images, fonts and PDFs are stable but not content-hashed, so they get a day
+# rather than the usual immutable year — replacing a photograph should show up
+# the next day, not next year.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# CSS and JS change whenever the site is edited; an hour is long enough to help
+# repeat visits and short enough that a fix is never stuck behind a cache.
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"

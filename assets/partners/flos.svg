@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 180" width="100%" height="100%">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&amp;display=swap');
+      .flos-text {
+        font-family: 'Cinzel', 'Didot', 'Bodoni MT', 'Times New Roman', serif;
+        font-weight: 700;
+        font-size: 135px;
+        letter-spacing: 2px;
+      }
+    </style>
+  </defs>
+  <!-- Transparent background, white official FLOS serif typography -->
+  <g fill="#FFFFFF">
+    <text x="10" y="132" class="flos-text">FLOS</text>
+  </g>
+</svg>

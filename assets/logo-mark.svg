@@ -1,41 +1,38 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="756" height="752" viewBox="0 0 756 752"
+     fill="none">
   <defs>
-    <!-- Subtle gradients for metallic premium feel -->
-    <linearGradient id="white-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FFFFFF"/>
-      <stop offset="100%" stop-color="#E2E8F0"/>
+    <linearGradient id="whiteFace" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#EDEDED"/>
     </linearGradient>
-
-    <linearGradient id="cyan-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00F0FF"/>
-      <stop offset="100%" stop-color="#00A8E8"/>
+    <linearGradient id="cyanFace" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#08D4EA"/>
+      <stop offset="1" stop-color="#00B9D9"/>
     </linearGradient>
-
-    <!-- Subtle edge glow -->
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#00E0FF" flood-opacity="0.25"/>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5"/>
     </filter>
   </defs>
 
-  <g transform="translate(0, 0)">
-    <!-- Main Top-Left Diagonal Bar -->
-    <polygon points="90,115 148,115 275,242 242,275 90,123" fill="url(#white-grad)" />
-    <!-- Bevel highlight for top diagonal -->
-    <polygon points="90,115 148,115 142,123 90,123" fill="#FFFFFF" />
+  <!-- Subtle depth/shadow faces -->
+  <path d="M137 268 L143 276 L143 620 L211 615 L211 609 L137 614 Z"
+        fill="#BFC5C8" opacity=".42"/>
+  <path d="M137 170 L223 171 L381 338 L374 350 L216 183 L137 183 Z"
+        fill="#C8CDD0" opacity=".38"/>
+  <path d="M536 170 L615 170 L615 509 L609 503 L609 177 L536 177 Z"
+        fill="#BEC4C7" opacity=".45"/>
+  <path d="M383 452 L416 375 L623 584 L623 621 L540 620 L540 614 L613 615 L613 586 L416 375 L389 451 Z"
+        fill="#008EAE" opacity=".38"/>
 
-    <!-- Left Vertical Pillar -->
-    <polygon points="90,180 148,238 148,410 90,410" fill="url(#white-grad)" />
-    <!-- Bevel edge on left pillar cut -->
-    <polygon points="90,180 148,238 140,238 90,188" fill="#CBD5E1" />
-
-    <!-- Cyan Diagonal Bar (Bottom-Right) -->
-    <polygon points="258,258 290,226 410,346 410,390 378,390" fill="url(#cyan-grad)" filter="url(#glow)" />
-    <!-- Cyan top bevel accent -->
-    <polygon points="258,258 290,226 298,234 266,266" fill="#7FF0FF" />
-
-    <!-- Right Vertical Pillar -->
-    <polygon points="352,115 410,115 410,345 352,287" fill="url(#white-grad)" />
-    <!-- Bevel edge on right pillar cut -->
-    <polygon points="352,287 410,345 410,335 358,283" fill="#CBD5E1" />
-  </g>
+  <!-- Main logo faces -->
+  <path d="M137 268 L137 614 L211 609 L217 351 Z"
+        fill="url(#whiteFace)"/>
+  <path d="M137 170 L223 171 L381 338 L345 412 Z"
+        fill="url(#whiteFace)"/>
+  <path d="M536 170 L615 170 L615 509 L534 426 Z"
+        fill="url(#whiteFace)"/>
+  <path d="M416 375 L614 586 L614 615 L540 614 L383 452 Z"
+        fill="url(#cyanFace)"/>
 </svg>

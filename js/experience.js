@@ -38,7 +38,8 @@
   'use strict';
 
   var doc = document, win = window;
-  var REDUCED = !!(win.matchMedia && win.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var IS_ANDROID = /Android/i.test(win.navigator ? win.navigator.userAgent : '');
+  var REDUCED = IS_ANDROID || !!(win.matchMedia && win.matchMedia('(prefers-reduced-motion: reduce)').matches);
   var COARSE = !!(win.matchMedia && win.matchMedia('(pointer: coarse)').matches);
 
   var clamp = function (v, a, b) { return v < a ? a : v > b ? b : v; };
@@ -93,6 +94,13 @@
 
   // Pure arithmetic over the cache — touches no layout at all.
   function measure() {
+    if (IS_ANDROID) {
+      camTarget = 0;
+      setStyle(progressBar, 'height',
+        (geo.docH > 0 ? clamp(scrollY / geo.docH, 0, 1) * 100 : 0).toFixed(1) + '%');
+      doc.body.classList.toggle('xp-scrolled', scrollY > 40);
+      return;
+    }
     var focus = scrollY + geo.vh * 0.5;
     var idx = 0, local = 0, n = geo.mids.length;
     for (var i = 0; i < n; i++) {

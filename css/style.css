@@ -322,6 +322,16 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Disable smooth scroll & scroll animations on Android devices */
+html.is-android {
+  scroll-behavior: auto !important;
+}
+html.is-android .reveal-up {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
 body {
   overflow-x: hidden;
   line-height: 1.6;

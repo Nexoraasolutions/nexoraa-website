@@ -5,6 +5,11 @@
 (function () {
   'use strict';
 
+  var IS_ANDROID = /Android/i.test(navigator.userAgent);
+  if (IS_ANDROID) {
+    document.documentElement.classList.add('is-android');
+  }
+
   var PHONE = '8133942204';
   var WA = '918133942204';
   var MAIL = 'chirag@nexorahomesolution.com';
@@ -41,24 +46,30 @@
   });
 
   /* ---------- Scroll Reveal Animations ---------- */
-  var observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.12
-  };
-
-  var revealObserver = new IntersectionObserver(function (entries, observer) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
-        observer.unobserve(entry.target);
-      }
+  if (IS_ANDROID) {
+    document.querySelectorAll('.reveal-up').forEach(function (el) {
+      el.classList.add('active');
     });
-  }, observerOptions);
+  } else {
+    var observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.12
+    };
 
-  document.querySelectorAll('.reveal-up').forEach(function (el) {
-    revealObserver.observe(el);
-  });  /* ============================================================================
+    var revealObserver = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal-up').forEach(function (el) {
+      revealObserver.observe(el);
+    });
+  }  /* ============================================================================
      NEXORAA — Reference Lighting Engine & Hero Room Cutaway System
      ========================================================================= */
 

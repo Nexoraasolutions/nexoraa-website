@@ -1179,6 +1179,10 @@ em {
   border-color: rgba(255, 255, 255, 0.08);
 }
 
+.ecosystem-cat-card.full-span {
+  grid-column: span 2;
+}
+
 .ecosystem-cat-hdr {
   display: flex;
   align-items: center;
@@ -1215,6 +1219,8 @@ em {
   display: grid;
   gap: 18px; /* Increased spacing around partner logo cards */
   align-items: center;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .ecosystem-brand-grid.cols-2 {
@@ -1227,6 +1233,10 @@ em {
 
 .ecosystem-brand-grid.cols-4 {
   grid-template-columns: repeat(4, 1fr);
+}
+
+.ecosystem-brand-grid.cols-6 {
+  grid-template-columns: repeat(6, 1fr);
 }
 
 .partner-logo-card {
@@ -1686,6 +1696,10 @@ footer {
   .ecosystem-brand-grid.cols-4 {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .ecosystem-brand-grid.cols-6 {
+    grid-template-columns: repeat(3, 1fr);
+  }
   
   .nav-links {
     position: fixed;
@@ -1981,7 +1995,8 @@ footer {
 
   .ecosystem-brand-grid.cols-2,
   .ecosystem-brand-grid.cols-3,
-  .ecosystem-brand-grid.cols-4 {
+  .ecosystem-brand-grid.cols-4,
+  .ecosystem-brand-grid.cols-6 {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
   }
